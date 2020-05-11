@@ -1,0 +1,20 @@
+(* -*- tuareg -*- *)
+
+let preprocess =
+  match Sys.getenv "BISECT_ENABLE" with
+  | "yes" -> {|
+    (preprocess
+      (pps bisect_ppx --exclusions src/.exclude))
+    (preprocessor_deps .exclude)
+  |}
+  | _ -> ""
+  | exception Not_found -> ""
+
+let () = Jbuild_plugin.V1.send @@ {|
+(library
+ (name postgres_protocol)
+ (public_name postgres-protocol)
+ (libraries cstruct)
+ |} ^ preprocess ^ {|
+)
+|}
