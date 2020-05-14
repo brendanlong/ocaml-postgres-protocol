@@ -1,0 +1,6 @@
+(executable
+ (name benchmark_postgres_protocol)
+ (libraries angstrom-async core_bench postgres_protocol)
+(ocamlopt_flags
+   (:standard -O3 -unbox-closures))
+ (preprocess (pps ppx_let)))

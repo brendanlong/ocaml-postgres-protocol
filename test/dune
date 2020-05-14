@@ -1,0 +1,5 @@
+(tests
+ (names test_postgres_protocol)
+ (package postgres-protocol)
+ (libraries alcotest postgres_protocol)
+ (preprocess (pps ppx_assert)))

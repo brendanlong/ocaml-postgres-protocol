@@ -19,11 +19,11 @@
 
 (package
  (name postgres-protocol)
- (synopsis "Serializers and deserializers for the PostgreSQL protocol.")
- (description "Serializers and deserializers for the PostgreSQL protocol.")
+ (synopsis "Serializers and deserializers for the PostgreSQL protocol")
  (depends
   (alcotest (and :with-test (>= 1.0.0)))
+  (angstrom (>= 0.14.0))
   (bisect_ppx (and :dev (>= 2.0.0)))
-  (cstruct (>= 5.0.0))
   (dune (>= 1.11.0))
-  (odoc :with-doc)))
+  (odoc :with-doc)
+  (ppx_assert :with-test)))

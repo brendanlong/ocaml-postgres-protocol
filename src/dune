@@ -14,7 +14,7 @@ let () = Jbuild_plugin.V1.send @@ {|
 (library
  (name postgres_protocol)
  (public_name postgres-protocol)
- (libraries cstruct)
+ (libraries angstrom)
  |} ^ preprocess ^ {|
 )
 |}
